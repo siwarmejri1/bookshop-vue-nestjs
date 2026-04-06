@@ -1,4 +1,4 @@
-# 
+# BookShop — Bibliothèque en ligne
 
 Interface moderne et professionnelle pour l'API NestJS BookShop.
 ##  Équipe
