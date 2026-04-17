@@ -1,17 +1,30 @@
-
-
+ import { createRouter, createWebHistory } from 'vue-router'
+ import { useAuthStore } from '../store/auth.js'
+ 
 import HomeView        from '../views/HomeView.vue'
 import AuthView        from '../views/AuthView.vue'
 import SignupView from '../views/SignupView.vue' 
 
 //hadhrna les routes w 3mlna l mapping bin les path w les components
 const routes = [
-   { path: '/',           component: HomeView,  },
+   { path: '/',       component: HomeView  },
   { path: '/login',   component: AuthView    },
   { path: '/signup',  component: SignupView  },
  
 ]
+const router = createRouter({ history: createWebHistory(), routes })
 
+router.beforeEach((to, _from, next) => {
+  const auth = useAuthStore()
 
+  if (to.meta.requiresAuth && !auth.isLoggedIn) return next('/login')
+  if ((to.path === '/login' || to.path === '/signup') && auth.isLoggedIn) {
+    return next(auth.isAdmin ? '/home' : '/user-home')
+  }
+  if (to.meta.requiresAdmin && !auth.isAdmin) return next('/user-home')
+  if (to.meta.requiresUser  &&  auth.isAdmin) return next('/home')
+
+  next()
+})
 
 export default router
