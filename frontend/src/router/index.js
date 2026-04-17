@@ -7,7 +7,7 @@ import SignupView from '../views/SignupView.vue'
 
 //hadhrna les routes w 3mlna l mapping bin les path w les components
 const routes = [
-   { path: '/',       component: HomeView  },
+  { path: '/home',    component: HomeView  }, // home mte3 admin 
   { path: '/login',   component: AuthView    },
   { path: '/signup',  component: SignupView  },
  
