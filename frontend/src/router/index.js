@@ -4,12 +4,15 @@
 import HomeView        from '../views/HomeView.vue'
 import AuthView        from '../views/AuthView.vue'
 import SignupView from '../views/SignupView.vue' 
+import AuthorsView from "../views/AuthorsView.vue";
 
 //hadhrna les routes w 3mlna l mapping bin les path w les components
 const routes = [
   { path: '/home',    component: HomeView  }, // home mte3 admin 
   { path: '/login',   component: AuthView    },
   { path: '/signup',  component: SignupView  },
+
+   { path: '/admin/authors', component: AuthorsView}, //view gestion des auteurs 
  
 ]
 const router = createRouter({ history: createWebHistory(), routes })
