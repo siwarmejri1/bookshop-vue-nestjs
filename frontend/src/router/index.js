@@ -6,6 +6,7 @@ import AuthView        from '../views/AuthView.vue'
 import SignupView from '../views/SignupView.vue' 
 import AuthorsView from "../views/AuthorsView.vue";
 import AddBookView from '../Views/AddBookView.vue'
+import AdminBooksView from '../views/AdminBooksView.vue'
 
 //hadhrna les routes w 3mlna l mapping bin les path w les components
 const routes = [
@@ -15,6 +16,9 @@ const routes = [
 
    { path: '/admin/authors', component: AuthorsView}, //view gestion des auteurs 
   { path: '/add', component: AddBookView}, //view ajout livre
+    { path: '/admin/books', component: AdminBooksView}, //view gestion des livres
+
+
 
 ]
 const router = createRouter({ history: createWebHistory(), routes })
