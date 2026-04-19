@@ -27,7 +27,7 @@
     </div>
     <div class="col-12">
       <label class="form-label-pro">Auteur</label>
-      <select class="form-control-pro" v-model="form.authorId">
+      <select class="form-control-pro" v-model="form.author_id">
         <option value="">— Sélectionner un auteur —</option>
          <option v-for="author in authors" :key="author.id" :value="author.id"
          >
