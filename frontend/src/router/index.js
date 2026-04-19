@@ -7,6 +7,8 @@ import SignupView from '../views/SignupView.vue'
 import FavouritesView  from '../views/FavouritesView.vue'
 import LandingView     from '../views/LandingView.vue'
 import HomeView        from '../views/HomeView.vue'
+import AllBooksView    from '../views/AllBooksView.vue'
+
 //hadhrna les routes w 3mlna l mapping bin les path w les components
 const routes = [
   { path: '/',        component: LandingView },
@@ -14,6 +16,7 @@ const routes = [
   { path: '/login',   component: AuthView    },
   { path: '/signup',  component: SignupView  },
   { path: '/user-home',      component: UserHomeView,    meta: { requiresAuth: true, requiresUser: true }},
+  { path: '/books',          component: AllBooksView,    meta: { requiresAuth: true } },
   { path: '/favourites',     component: FavouritesView,  meta: { requiresAuth: true , requiresUser: true} },
 ]
 const router = createRouter({ history: createWebHistory(), routes })
