@@ -1,16 +1,20 @@
  import { createRouter, createWebHistory } from 'vue-router'
  import { useAuthStore } from '../store/auth.js'
  
-import HomeView        from '../views/HomeView.vue'
-import AuthView        from '../views/AuthView.vue'
+import UserHomeView from '../views/UserHomeView.vue' 
+import AuthView     from '../views/AuthView.vue'
 import SignupView from '../views/SignupView.vue' 
-
+import FavouritesView  from '../views/FavouritesView.vue'
+import LandingView     from '../views/LandingView.vue'
+import HomeView        from '../views/HomeView.vue'
 //hadhrna les routes w 3mlna l mapping bin les path w les components
 const routes = [
-   { path: '/',       component: HomeView  },
+  { path: '/',        component: LandingView },
+  { path: '/home',    component: HomeView,        meta: { requiresAuth: true , requiresAdmin: true } },
   { path: '/login',   component: AuthView    },
   { path: '/signup',  component: SignupView  },
- 
+  { path: '/user-home',      component: UserHomeView,    meta: { requiresAuth: true, requiresUser: true }},
+  { path: '/favourites',     component: FavouritesView,  meta: { requiresAuth: true , requiresUser: true} },
 ]
 const router = createRouter({ history: createWebHistory(), routes })
 
