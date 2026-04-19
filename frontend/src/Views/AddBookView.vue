@@ -73,6 +73,7 @@
 <script setup>
 import { ref, reactive, onMounted } from 'vue'
 import AppLayout from '../components/AppLayout.vue'
+import BookForm  from '../components/BookForm.vue'
 import { getAllAuthors, addBook } from '../services/api.js'
 
 const authors = ref([]) // bech nestockiw les auteurs jeyin mel API
@@ -96,9 +97,6 @@ function reset() {
   Object.keys(form).forEach((k) => (form[k] = ''))
 }
 
-function imgPreviewErr(e) {
-  e.target.style.display = 'none'
-}
 //soumission du formulaire
 async function submit() {
   error.value = ''

@@ -44,4 +44,8 @@ defineProps({
   form:    { type: Object, required: true },
   authors: { type: Array,  default: () => [] },
 })
+
+function onImgError(e) {
+  e.target.src = 'https://placehold.co/42x52/1e2f45/c9a84c?text=📖'
+}
 </script>
