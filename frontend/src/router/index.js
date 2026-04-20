@@ -10,13 +10,13 @@ import AdminBooksView from '../views/AdminBooksView.vue'
 
 //hadhrna les routes w 3mlna l mapping bin les path w les components
 const routes = [
-  { path: '/home',    component: HomeView  }, // home mte3 admin 
+  { path: '/home',    component: HomeView,        meta: { requiresAuth: true , requiresAdmin: true }   }, // home mte3 admin 
   { path: '/login',   component: AuthView    },
   { path: '/signup',  component: SignupView  },
 
-   { path: '/admin/authors', component: AuthorsView}, //view gestion des auteurs 
-  { path: '/add', component: AddBookView}, //view ajout livre
-    { path: '/admin/books', component: AdminBooksView}, //view gestion des livres
+   { path: '/admin/authors', component: AuthorsView,        meta: { requiresAuth: true , requiresAdmin: true } }, //view gestion des auteurs 
+  { path: '/add', component: AddBookView,        meta: { requiresAuth: true , requiresAdmin: true } }, //view ajout livre
+    { path: '/admin/books', component: AdminBooksView,        meta: { requiresAuth: true , requiresAdmin: true } }, //view gestion des livres
 
 
 
