@@ -7,7 +7,7 @@
       </div>
     </div>
 
-  // l'affichage mtaa les favoris mta3ou
+  <!-- l'affichage mtaa les favoris mta3ou -->
     <div v-if="loading" class="spinner-wrap">
       <div class="spinner-pro"></div>
     </div>
@@ -32,7 +32,7 @@
         v-for="item in fav.favourites"
         :key="item.id"
       >
-       // ken l'item 3andou book (structure API) n'affichiouha, sinon n'affichiou l'item (ancienne structure localStorage)
+       <!-- ken l'item 3andou book (structure API) n'affichiouha, sinon n'affichiou l'item (ancienne structure localStorage) -->
         <div class="book-card" style="cursor:pointer" @click="selectedBook = getBook(item)">
           <div class="book-card-img">
             <img

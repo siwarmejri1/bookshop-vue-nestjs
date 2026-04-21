@@ -8,8 +8,6 @@ import FavouritesView  from '../views/FavouritesView.vue'
 import LandingView     from '../views/LandingView.vue'
 import HomeView        from '../views/HomeView.vue'
 import AllBooksView    from '../views/AllBooksView.vue'
-import AuthView        from '../views/AuthView.vue'
-import SignupView from '../views/SignupView.vue' 
 import AuthorsView from "../views/AuthorsView.vue";
 import AddBookView from '../Views/AddBookView.vue'
 import AdminBooksView from '../views/AdminBooksView.vue'

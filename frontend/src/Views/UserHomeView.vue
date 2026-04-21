@@ -1,4 +1,4 @@
-// lhome mtaa l user (personnalisé)
+ <!-- lhome mtaa l user (personnalisé) -->
 <template>
   <AppLayout title="Accueil">
     <div class="page-header">
@@ -7,7 +7,7 @@
         <p class="page-subtitle">Bienvenue dans votre espace lecture</p>
       </div>
     </div>
-// lktob lmaoujoudin 
+ <!--  lktob lmaoujoudin -->
     <!-- Stat cards -->
     <div class="row g-4 mb-4">
       <div class="col-md-6">
@@ -24,13 +24,13 @@
           <div class="stat-icon" style="background:#fff8e6">
             <i class="bi bi-heart-fill" style="color:#c9a84c"></i>
           </div>
-          // besh n'affichiou le nombre mtaa l favoris mta3ou
+          <!-- besh n'affichiou le nombre mtaa l favoris mta3ou -->
           <div class="stat-value">{{ fav.count }}</div>
           <div class="stat-label">Mes favoris</div>
         </div>
       </div>
     </div>
-    // l'affichage mtaa ekher ktob tzedou 
+    <!-- l'affichage mtaa ekher ktob tzedou -->
     <!-- Derniers livres ajoutés -->
     <div class="d-flex align-items-center justify-content-between mb-3">
       <h4 style="font-family:'Playfair Display',serif;font-size:1.3rem">
