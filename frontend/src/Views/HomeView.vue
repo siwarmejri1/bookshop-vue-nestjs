@@ -137,7 +137,9 @@
     <div v-if="loading" class="spinner-wrap"><div class="spinner-pro"></div></div>
    <div class="row g-3" v-else>
   <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6" v-for="book in recentBooks" :key="book.id">
-        <div class="book-card">
+        <div class="book-card"  
+        @click="openBook(book)"
+          style="cursor:pointer">
           <div class="book-card-img">
             <img :src="book.image" :alt="book.title" @error="onImgError" />
           </div>
@@ -153,13 +155,18 @@
         </div>
       </div>
     </div>
-
+<!-- Modal -->
+    <BookDetailModal
+      :book="selectedBook"
+      @close="closeModal"
+    />
   </AppLayout>
 </template>
 
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 import AppLayout from '../components/AppLayout.vue'
+import BookDetailModal from '../components/BookDetailModal.vue'
 import { getAllBooks, getAllAuthors, getFavStats } from '../services/api.js'
 
 //les varaibles mte3 l etat mte3na
@@ -205,5 +212,17 @@ onMounted(async () => {
 // en cas image fih erreur yet7att image mte3 lien hedha
 function onImgError(e) {
   e.target.src = 'https://placehold.co/300x260/1e2f45/c9a84c?text=📖'
+}
+
+// MODAL STATE
+const selectedBook = ref(null)
+
+// METHODS
+function openBook(book) {
+  selectedBook.value = book
+}
+
+function closeModal() {
+  selectedBook.value = null
 }
 </script>
